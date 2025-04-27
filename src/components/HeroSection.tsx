@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Linkedin, Mail } from 'lucide-react';
@@ -30,7 +29,7 @@ export default function HeroSection() {
         <div className="w-full md:w-1/2 mb-10 md:mb-0 flex justify-center">
           <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-lg animate-float">
             <img 
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1000" 
+              src="/lovable-uploads/d167e14b-98f3-42ec-8dbd-c3fe732316ad.png" 
               alt="Divya Agarwal" 
               className="w-full h-full object-cover"
             />
