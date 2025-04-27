@@ -8,15 +8,18 @@ export default function AboutSection() {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-10 pb-4 relative inline-block">
             About Me
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 w-24 bg-teal rounded-full"></div>
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 w-24 bg-purple-500 rounded-full"></div>
           </h2>
           
           <div className="prose prose-lg max-w-none">
+            <h3 className="text-xl mb-4 text-purple-600">
+              Product & Operations Analyst | Data-Driven Problem Solver | Customer-Centric Strategist
+            </h3>
             <p className="text-lg mb-6">
-              Seasoned Product Manager and Operations Analyst with 5+ years of experience driving efficiency and customer satisfaction through data-informed solutions. Proven track record of streamlining processes, leading cross-functional teams, and delivering innovative product features that align with business objectives and user needs.
+              I specialize in transforming user pain points into actionable product requirements, optimizing workflows, and driving data-informed decisions. With expertise in Agile methodologies and stakeholder management, I bridge gaps between teams to enhance product lifecycles and deliver impactful solutions.
             </p>
             <p className="text-lg mb-6">
-              Skilled in identifying optimization opportunities through data analysis and stakeholder collaboration, with a focus on translating insights into actionable product roadmaps and operational strategies.
+              Passionate about efficiency, collaboration, and turning insights into results.
             </p>
           </div>
         </div>

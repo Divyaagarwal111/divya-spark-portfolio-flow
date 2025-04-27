@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, FileText } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -11,6 +11,8 @@ interface Project {
   results: string[];
   tools: string[];
   demoLink: string;
+  pdfLink: string;
+  hasPrototype?: boolean;
 }
 
 export default function ProjectsSection() {
@@ -28,7 +30,9 @@ export default function ProjectsSection() {
         "Reduced order cancellations by 12%"
       ],
       tools: ["Figma", "SQL", "A/B Testing", "User Research"],
-      demoLink: "#"
+      demoLink: "https://swiggyprototype.netlify.app/",
+      pdfLink: "#",
+      hasPrototype: true
     },
     {
       id: 2,
@@ -41,7 +45,8 @@ export default function ProjectsSection() {
         "Improved driver satisfaction score by 27%"
       ],
       tools: ["Tableau", "SQL", "Python", "User Testing"],
-      demoLink: "#"
+      demoLink: "#",
+      pdfLink: "#"
     }
   ];
 
@@ -58,7 +63,7 @@ export default function ProjectsSection() {
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 pb-4 relative inline-block">
           Featured Projects
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 w-28 bg-teal rounded-full"></div>
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 w-28 bg-purple-500 rounded-full"></div>
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
@@ -68,7 +73,7 @@ export default function ProjectsSection() {
                 <div className="flip-card-inner">
                   {/* Front of card */}
                   <div className="flip-card-front bg-white rounded-2xl shadow-lg overflow-hidden">
-                    <div className="h-48 bg-gradient-to-r from-teal to-soft-orange relative">
+                    <div className="h-48 bg-gradient-to-r from-purple-500 to-pink-400 relative">
                       <img 
                         src={`https://source.unsplash.com/random/800x600/?${project.name.split(' ')[0].toLowerCase()}`}
                         alt={project.name}
@@ -87,7 +92,7 @@ export default function ProjectsSection() {
                         {project.tools.map((tool) => (
                           <span 
                             key={tool} 
-                            className="bg-soft-peach text-dark-gray py-1 px-2 rounded-full text-xs"
+                            className="bg-pink-100 text-purple-700 py-1 px-2 rounded-full text-xs"
                           >
                             {tool}
                           </span>
@@ -96,7 +101,7 @@ export default function ProjectsSection() {
                       
                       <Button 
                         onClick={() => toggleCard(project.id)}
-                        className="w-full bg-teal hover:bg-teal/90"
+                        className="w-full bg-purple-500 hover:bg-purple-600"
                       >
                         View Details
                       </Button>
@@ -105,7 +110,7 @@ export default function ProjectsSection() {
                   
                   {/* Back of card */}
                   <div className="flip-card-back bg-white rounded-2xl shadow-lg p-6">
-                    <h3 className="text-2xl font-bold mb-4 text-teal">{project.name}</h3>
+                    <h3 className="text-2xl font-bold mb-4 text-purple-600">{project.name}</h3>
                     
                     <div className="mb-6">
                       <h4 className="font-bold text-lg mb-2">Key Results:</h4>
@@ -116,7 +121,7 @@ export default function ProjectsSection() {
                       </ul>
                     </div>
                     
-                    <div className="flex gap-4 mt-auto">
+                    <div className="flex flex-wrap gap-3 mt-auto">
                       <Button 
                         onClick={() => toggleCard(project.id)}
                         variant="outline"
@@ -124,12 +129,25 @@ export default function ProjectsSection() {
                       >
                         Back
                       </Button>
+                      
+                      {project.hasPrototype && (
+                        <Button 
+                          asChild
+                          className="flex-1 bg-purple-500 hover:bg-purple-600 gap-1"
+                        >
+                          <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
+                            View Prototype <ExternalLink className="w-4 h-4" />
+                          </a>
+                        </Button>
+                      )}
+                      
                       <Button 
                         asChild
-                        className="flex-1 bg-teal hover:bg-teal/90 gap-1"
+                        variant="outline"
+                        className="flex-1 border-pink-300 text-purple-700 hover:bg-pink-50 gap-1"
                       >
-                        <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
-                          Demo <ExternalLink className="w-4 h-4" />
+                        <a href={project.pdfLink} target="_blank" rel="noopener noreferrer">
+                          Download PDF <FileText className="w-4 h-4" />
                         </a>
                       </Button>
                     </div>
