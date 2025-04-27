@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,16 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Portfolio custom colors
+				teal: "#33C3F0",
+				"soft-orange": "#FEC6A1",
+				"soft-peach": "#FDE1D3",
+				"neutral-gray": "#8E9196",
+				"cool-gray": "#aaadb0",
+				"light-gray": "#F1F1F1",
+				"off-white": "#eee",
+				"dark-gray": "#222",
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +94,96 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'fade-out': {
+					'0%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					},
+					'100%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					}
+				},
+				'scale-in': {
+					'0%': {
+						transform: 'scale(0.95)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'pulse-soft': {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'50%': {
+						opacity: '0.8'
+					}
+				},
+				'spin-slow': {
+					'0%': {
+						transform: 'rotate(0deg)'
+					},
+					'100%': {
+						transform: 'rotate(360deg)'
+					}
+				},
+				'flip': {
+					'0%': {
+						transform: 'rotateY(0deg)'
+					},
+					'100%': {
+						transform: 'rotateY(180deg)'
+					}
+				},
+				'flip-back': {
+					'0%': {
+						transform: 'rotateY(180deg)'
+					},
+					'100%': {
+						transform: 'rotateY(0deg)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.5s ease-out',
+				'scale-in': 'scale-in 0.3s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'pulse-soft': 'pulse-soft 3s ease-in-out infinite',
+				'spin-slow': 'spin-slow 8s linear infinite',
+				'flip': 'flip 0.5s ease-out forwards',
+				'flip-back': 'flip-back 0.5s ease-out forwards'
+			},
+			fontFamily: {
+				'playfair': ['"Playfair Display"', 'serif'],
+				'lato': ['Lato', 'sans-serif'],
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'data-flow': 'url("/data-flow-bg.svg")'
 			}
 		}
 	},
