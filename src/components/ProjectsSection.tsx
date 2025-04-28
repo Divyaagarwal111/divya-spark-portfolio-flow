@@ -38,13 +38,13 @@ export default function ProjectsSection() {
       id: 2,
       name: "FleetMaster Dashboard",
       description: "Designed and deployed a comprehensive fleet management system for delivery operations",
-      image: "/project-fleet.jpg", // Placeholder
+      image: "/project-fleet.jpg",
       results: [
         "Reduced fleet idle time by 18%",
         "Optimized delivery routes saving $240K annually",
         "Improved driver satisfaction score by 27%"
       ],
-      tools: ["Tableau", "SQL", "Python", "User Testing"],
+      tools: ["Tableau", "SQL"],
       demoLink: "#",
       pdfLink: "#"
     }
