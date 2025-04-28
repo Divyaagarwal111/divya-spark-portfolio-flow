@@ -7,10 +7,14 @@ import {
   TooltipTrigger 
 } from "@/components/ui/tooltip";
 import {
-  Briefcase,
-  FileText,
+  Database,
   BarChart3,
-  Layout
+  Beaker,
+  Layout,
+  Users,
+  ListOrdered,
+  Rocket,
+  Workflow
 } from 'lucide-react';
 
 interface Skill {
@@ -23,28 +27,46 @@ interface Skill {
 export default function SkillsSection() {
   const skills: Skill[] = [
     {
-      name: "Product Management",
-      icon: <Briefcase className="w-8 h-8 text-purple-400" />,
-      description: "Product Execution & Agile Roadmaps",
-      tools: ["PRDs", "A/B Testing", "Agile", "Stakeholder Management"]
+      name: "SQL Queries",
+      icon: <Database className="w-8 h-8 text-purple-400" />,
+      description: "Database Management & Analysis",
+      tools: ["Excel", "Tableau"]
     },
     {
-      name: "Process Optimization",
+      name: "Data Analytics",
       icon: <BarChart3 className="w-8 h-8 text-purple-400" />,
-      description: "Metrics & Performance Scaling",
-      tools: ["KPI Analysis", "Workflow Optimization", "Team Performance"]
+      description: "Insights & Decision Support",
+      tools: ["Tableau", "Excel"]
     },
     {
-      name: "Customer Advocacy",
+      name: "A/B Testing",
+      icon: <Beaker className="w-8 h-8 text-purple-400" />,
+      description: "Experiment Design & Validation",
+      tools: ["ChatGPT", "Excel"]
+    },
+    {
+      name: "UI/UX",
       icon: <Layout className="w-8 h-8 text-purple-400" />,
-      description: "User-Centric Solutions",
-      tools: ["User Research", "Pain Point Analysis", "Requirements Gathering"]
+      description: "User-Focused Design",
+      tools: ["Figma", "Miro"]
     },
     {
-      name: "Documentation",
-      icon: <FileText className="w-8 h-8 text-purple-400" />,
-      description: "Technical Documentation",
-      tools: ["PRDs", "User Stories", "Technical Specs"]
+      name: "Stakeholder Management",
+      icon: <Users className="w-8 h-8 text-purple-400" />,
+      description: "Cross-Functional Communication",
+      tools: ["Notion", "Jira"]
+    },
+    {
+      name: "Prioritization Frameworks",
+      icon: <ListOrdered className="w-8 h-8 text-purple-400" />,
+      description: "Strategic Resource Allocation",
+      tools: ["Jira", "Miro", "Notion"]
+    },
+    {
+      name: "GTM Strategy",
+      icon: <Rocket className="w-8 h-8 text-purple-400" />,
+      description: "Market Entry & Expansion Planning",
+      tools: ["Miro", "ChatGPT"]
     }
   ];
 
@@ -53,7 +75,7 @@ export default function SkillsSection() {
   return (
     <section id="skills" className="section-padding bg-dark-gray text-white">
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 pb-4 relative inline-block">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 pb-4 relative inline-block text-white">
           Key Skills
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 w-20 bg-purple-500 rounded-full"></div>
         </h2>
@@ -80,7 +102,7 @@ export default function SkillsSection() {
                     </TooltipTrigger>
                     <TooltipContent side="bottom" className="max-w-xs p-4 bg-purple-900 text-white">
                       <div>
-                        <h4 className="font-bold mb-2">Expertise:</h4>
+                        <h4 className="font-bold mb-2">Tools:</h4>
                         <div className="flex flex-wrap gap-2">
                           {skill.tools?.map((tool) => (
                             <span 

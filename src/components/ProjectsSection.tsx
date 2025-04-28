@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, FileText } from 'lucide-react';
@@ -44,7 +43,7 @@ export default function ProjectsSection() {
         "Optimized delivery routes saving $240K annually",
         "Improved driver satisfaction score by 27%"
       ],
-      tools: ["Tableau", "SQL"],
+      tools: [], // Removed SQL and Tableau from here
       demoLink: "#",
       pdfLink: "#"
     }
