@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Linkedin, Mail, FileText } from 'lucide-react';
@@ -37,7 +38,7 @@ export default function HeroSection() {
             className="mt-4 bg-purple-500/10 border-purple-500 text-purple-300 hover:bg-purple-500/20"
             asChild
           >
-            <a href="#" download>
+            <a href="https://ljcgevwbfyvbbzpdsnri.supabase.co/storage/v1/object/sign/portfolio.pdfs/Divya_Agarwal_2025.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2ViZWI3ZTYyLTFhMDgtNDk0ZS1hOGVkLTYxODk3YTY3YmI2OCJ9.eyJ1cmwiOiJwb3J0Zm9saW8ucGRmcy9EaXZ5YV9BZ2Fyd2FsXzIwMjUucGRmIiwiaWF0IjoxNzQ1ODIwNzY5LCJleHAiOjE4MDg4OTI3Njl9.HwfrWcT_yGgY32IjRIMhB723DugH1wX_1lTaa3pi8Y4" target="_blank" rel="noopener noreferrer">
               <FileText className="w-5 h-5 mr-2" />
               Download Resume
             </a>

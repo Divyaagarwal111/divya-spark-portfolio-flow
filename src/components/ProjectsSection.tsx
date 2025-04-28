@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, FileText } from 'lucide-react';
@@ -43,9 +44,9 @@ export default function ProjectsSection() {
         "Optimized delivery routes saving $240K annually",
         "Improved driver satisfaction score by 27%"
       ],
-      tools: [], // Removed SQL and Tableau from here
+      tools: [],
       demoLink: "#",
-      pdfLink: "#"
+      pdfLink: "https://ljcgevwbfyvbbzpdsnri.supabase.co/storage/v1/object/sign/portfolio.pdfs/Launch%20of%20Fleetmaster.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2ViZWI3ZTYyLTFhMDgtNDk0ZS1hOGVkLTYxODk3YTY3YmI2OCJ9.eyJ1cmwiOiJwb3J0Zm9saW8ucGRmcy9MYXVuY2ggb2YgRmxlZXRtYXN0ZXIucGRmIiwiaWF0IjoxNzQ1ODIwODI1LCJleHAiOjE3NzczNTY4MjV9.P6ZUo9pw8jtCQXSQfuTl3IONC3RuMOQtCxFTwKb4F8M"
     }
   ];
 
