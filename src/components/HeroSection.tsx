@@ -49,9 +49,32 @@ export default function HeroSection() {
         <div className="w-full md:w-1/2 text-center md:text-left">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in">
             <span className="block">Divya Agarwal</span>
-            <span className="text-purple-500 h-16 inline-block">
-              {titles[titleIndex]}
-            </span>
+            <div className="flex items-center text-purple-500">
+              <span className="mr-2">I am</span>
+              <div className="relative h-16 overflow-hidden">
+                <span 
+                  className={`absolute transition-all duration-500 ${
+                    titleIndex === 0 ? "top-0 opacity-100" : "top-16 opacity-0"
+                  }`}
+                >
+                  Product Analyst
+                </span>
+                <span 
+                  className={`absolute transition-all duration-500 ${
+                    titleIndex === 1 ? "top-0 opacity-100" : "top-16 opacity-0"
+                  }`}
+                >
+                  Operations Analyst
+                </span>
+                <span 
+                  className={`absolute transition-all duration-500 ${
+                    titleIndex === 2 ? "top-0 opacity-100" : "top-16 opacity-0"
+                  }`}
+                >
+                  Program Analyst
+                </span>
+              </div>
+            </div>
           </h1>
           
           <p className="text-lg md:text-xl text-neutral-gray mb-8 max-w-lg animate-fade-in" style={{ animationDelay: '0.2s' }}>
