@@ -1,9 +1,20 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowDown, Linkedin, Mail, FileText } from 'lucide-react';
+import { ArrowDown, Linkedin, Mail } from 'lucide-react';
 
 export default function HeroSection() {
+  const [titleIndex, setTitleIndex] = useState(0);
+  const titles = ["Product Analyst", "Operations Analyst", "Program Analyst"];
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTitleIndex((prevIndex) => (prevIndex + 1) % titles.length);
+    }, 3000); // Change title every 3 seconds
+    
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="min-h-screen flex items-center pt-16 relative overflow-hidden bg-dark-gray text-white">
       {/* Background Elements */}
@@ -32,24 +43,15 @@ export default function HeroSection() {
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30"></div>
           </div>
-          
-          <Button 
-            variant="outline" 
-            className="mt-4 bg-purple-500/10 border-purple-500 text-purple-300 hover:bg-purple-500/20"
-            asChild
-          >
-            <a href="https://ljcgevwbfyvbbzpdsnri.supabase.co/storage/v1/object/sign/portfolio.pdfs/Divya_Agarwal_2025.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2ViZWI3ZTYyLTFhMDgtNDk0ZS1hOGVkLTYxODk3YTY3YmI2OCJ9.eyJ1cmwiOiJwb3J0Zm9saW8ucGRmcy9EaXZ5YV9BZ2Fyd2FsXzIwMjUucGRmIiwiaWF0IjoxNzQ1ODIwNzY5LCJleHAiOjE4MDg4OTI3Njl9.HwfrWcT_yGgY32IjRIMhB723DugH1wX_1lTaa3pi8Y4" target="_blank" rel="noopener noreferrer">
-              <FileText className="w-5 h-5 mr-2" />
-              Download Resume
-            </a>
-          </Button>
         </div>
         
         {/* Content Column */}
         <div className="w-full md:w-1/2 text-center md:text-left">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in">
             <span className="block">Divya Agarwal</span>
-            <span className="text-purple-500">Product & Operations Analyst</span>
+            <span className="text-purple-500 h-16 inline-block">
+              {titles[titleIndex]}
+            </span>
           </h1>
           
           <p className="text-lg md:text-xl text-neutral-gray mb-8 max-w-lg animate-fade-in" style={{ animationDelay: '0.2s' }}>
