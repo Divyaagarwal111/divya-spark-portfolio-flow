@@ -9,7 +9,6 @@ export default function Footer() {
         <div className="max-w-3xl mx-auto text-center">
           <div className="mb-8">
             <h2 className="font-playfair text-3xl font-bold mb-2">Divya Agarwal</h2>
-            <p className="text-purple-200">Product & Operations Analyst</p>
           </div>
           
           <div className="flex justify-center mb-8 space-x-6">

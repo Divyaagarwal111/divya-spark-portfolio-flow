@@ -13,7 +13,7 @@ export default function AboutSection() {
           
           <div className="prose prose-lg max-w-none text-white">
             <h3 className="text-xl mb-4 text-purple-400">
-              Product & Operations Analyst | Data-Driven Problem Solver | Customer-Centric Strategist
+               Data-Driven Problem Solver | Customer-Centric Strategist
             </h3>
             <p className="text-lg mb-6 text-gray-300">
               I specialize in transforming user pain points into actionable product requirements, optimizing workflows, and driving data-informed decisions. With expertise in Agile methodologies and stakeholder management, I bridge gaps between teams to enhance product lifecycles and deliver impactful solutions.
