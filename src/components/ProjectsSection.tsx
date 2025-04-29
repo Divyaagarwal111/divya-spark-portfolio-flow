@@ -61,7 +61,7 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="section-padding bg-light-gray">
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 pb-4 relative inline-block">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 pb-4 relative inline-block text-white">
           Featured Projects
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 w-28 bg-purple-500 rounded-full"></div>
         </h2>
