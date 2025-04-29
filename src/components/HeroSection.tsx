@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Linkedin, Mail } from 'lucide-react';
@@ -47,15 +48,15 @@ export default function HeroSection() {
         {/* Content Column */}
         <div className="w-full md:w-1/2 text-center md:text-left">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in">
-            <span className="block">Divya Agarwal</span>
-            <div className="flex items-center text-purple-500">
-              <span className="mr-2">I am</span>
-              <div className="h-16 inline-block">
+            <span className="block mb-2">Divya Agarwal</span>
+            <div className="flex items-center">
+              <span className="text-pink-300 mr-2">I am</span>
+              <div className="h-16 inline-block min-w-[220px]">
                 <div className="relative">
                   {titles.map((title, index) => (
                     <span
                       key={index}
-                      className={`absolute left-0 transition-all duration-500 ${
+                      className={`absolute left-0 transition-all duration-500 text-purple-500 ${
                         titleIndex === index 
                           ? "opacity-100 transform-none" 
                           : "opacity-0 -translate-y-4"
@@ -69,7 +70,7 @@ export default function HeroSection() {
             </div>
           </h1>
           
-          <p className="text-lg md:text-xl text-neutral-gray mb-8 max-w-lg animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <p className="text-lg md:text-xl text-neutral-gray mb-8 max-w-lg mt-10 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Driving customer-centric solutions with data & agility
           </p>
           
