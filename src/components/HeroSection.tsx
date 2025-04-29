@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Linkedin, Mail } from 'lucide-react';
@@ -51,28 +50,21 @@ export default function HeroSection() {
             <span className="block">Divya Agarwal</span>
             <div className="flex items-center text-purple-500">
               <span className="mr-2">I am</span>
-              <div className="relative h-16 overflow-hidden">
-                <span 
-                  className={`absolute transition-all duration-500 ${
-                    titleIndex === 0 ? "top-0 opacity-100" : "top-16 opacity-0"
-                  }`}
-                >
-                  Product Analyst
-                </span>
-                <span 
-                  className={`absolute transition-all duration-500 ${
-                    titleIndex === 1 ? "top-0 opacity-100" : "top-16 opacity-0"
-                  }`}
-                >
-                  Operations Analyst
-                </span>
-                <span 
-                  className={`absolute transition-all duration-500 ${
-                    titleIndex === 2 ? "top-0 opacity-100" : "top-16 opacity-0"
-                  }`}
-                >
-                  Program Analyst
-                </span>
+              <div className="h-16 inline-block">
+                <div className="relative">
+                  {titles.map((title, index) => (
+                    <span
+                      key={index}
+                      className={`absolute left-0 transition-all duration-500 ${
+                        titleIndex === index 
+                          ? "opacity-100 transform-none" 
+                          : "opacity-0 -translate-y-4"
+                      }`}
+                    >
+                      {title}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </h1>
