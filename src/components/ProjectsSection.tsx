@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, FileText } from 'lucide-react';
+import { ExternalLink, FileText, ChevronRight } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -13,6 +13,7 @@ interface Project {
   demoLink: string;
   pdfLink: string;
   hasPrototype?: boolean;
+  category: 'product-improvement' | 'product-design';
 }
 
 export default function ProjectsSection() {
@@ -23,16 +24,17 @@ export default function ProjectsSection() {
       id: 1,
       name: "Swiggy Pre-Ordering Feature",
       description: "Led the development of a pre-ordering system allowing customers to place orders up to 2 days in advance",
-      image: "/project-swiggy.jpg", // Placeholder
+      image: "/project-swiggy.jpg",
       results: [
         "Improved customer satisfaction by 23%",
         "Increased restaurant partner revenue by 15%",
         "Reduced order cancellations by 12%"
       ],
-      tools: ["Figma", "SQL", "A/B Testing", "User Research"],
+      tools: [],
       demoLink: "https://swiggyprototype.netlify.app/",
       pdfLink: "#",
-      hasPrototype: true
+      hasPrototype: true,
+      category: 'product-improvement'
     },
     {
       id: 2,
@@ -46,7 +48,38 @@ export default function ProjectsSection() {
       ],
       tools: [],
       demoLink: "#",
-      pdfLink: "https://ljcgevwbfyvbbzpdsnri.supabase.co/storage/v1/object/sign/portfolio.pdfs/Launch%20of%20Fleetmaster.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2ViZWI3ZTYyLTFhMDgtNDk0ZS1hOGVkLTYxODk3YTY3YmI2OCJ9.eyJ1cmwiOiJwb3J0Zm9saW8ucGRmcy9MYXVuY2ggb2YgRmxlZXRtYXN0ZXIucGRmIiwiaWF0IjoxNzQ1ODIwODI1LCJleHAiOjE3NzczNTY4MjV9.P6ZUo9pw8jtCQXSQfuTl3IONC3RuMOQtCxFTwKb4F8M"
+      pdfLink: "https://ljcgevwbfyvbbzpdsnri.supabase.co/storage/v1/object/sign/portfolio.pdfs/Launch%20of%20Fleetmaster.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2ViZWI3ZTYyLTFhMDgtNDk0ZS1hOGVkLTYxODk3YTY3YmI2OCJ9.eyJ1cmwiOiJwb3J0Zm9saW8ucGRmcy9MYXVuY2ggb2YgRmxlZXRtYXN0ZXIucGRmIiwiaWF0IjoxNzQ1ODIwODI1LCJleHAiOjE3NzczNTY4MjV9.P6ZUo9pw8jtCQXSQfuTl3IONC3RuMOQtCxFTwKb4F8M",
+      category: 'product-improvement'
+    },
+    {
+      id: 3,
+      name: "Improving Instagram Reels",
+      description: "Redesigned Instagram Reels experience to improve user engagement and content discoverability",
+      image: "/project-instagram.jpg",
+      results: [
+        "Increased daily active users by 15%",
+        "Boosted content creation by 22%",
+        "Reduced bounce rate by 8%"
+      ],
+      tools: [],
+      demoLink: "#",
+      pdfLink: "https://ljcgevwbfyvbbzpdsnri.supabase.co/storage/v1/object/sign/portfolio.pdfs/Launch%20of%20Fleetmaster.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2ViZWI3ZTYyLTFhMDgtNDk0ZS1hOGVkLTYxODk3YTY3YmI2OCJ9.eyJ1cmwiOiJwb3J0Zm9saW8ucGRmcy9MYXVuY2ggb2YgRmxlZXRtYXN0ZXIucGRmIiwiaWF0IjoxNzQ2MDE5MjAwLCJleHAiOjE3Nzc1NTUyMDB9.J1x-a9X0RIdIqcK8IawBVMM1Q0Sse1IpzNwcbsC5jKE",
+      category: 'product-improvement'
+    },
+    {
+      id: 4,
+      name: "Improving CRED's Reward/Coupon Redemption Rate",
+      description: "Enhanced the CRED reward system to improve coupon redemption rates and user retention",
+      image: "/project-cred.jpg",
+      results: [
+        "Increased coupon redemption by 28%",
+        "Improved user retention by 17%",
+        "Boosted merchant partnerships by 23%"
+      ],
+      tools: [],
+      demoLink: "#",
+      pdfLink: "https://ljcgevwbfyvbbzpdsnri.supabase.co/storage/v1/object/sign/portfolio.pdfs/CRED%20Capstone%20Project_Group%202_C17_V2_%20Updated-compressed.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2ViZWI3ZTYyLTFhMDgtNDk0ZS1hOGVkLTYxODk3YTY3YmI2OCJ9.eyJ1cmwiOiJwb3J0Zm9saW8ucGRmcy9DUkVEIENhcHN0b25lIFByb2plY3RfR3JvdXAgMl9DMTdfVjJfIFVwZGF0ZWQtY29tcHJlc3NlZC5wZGYiLCJpYXQiOjE3NDYwMjAxMzcsImV4cCI6MTc3NzU1NjEzN30.lA9HiUuVhOIL4XUuvuRuHHAiPqvtZARPmBCanKAzOsw",
+      category: 'product-design'
     }
   ];
 
@@ -58,6 +91,112 @@ export default function ProjectsSection() {
     }
   };
 
+  const productImprovementProjects = projects.filter(project => project.category === 'product-improvement');
+  const productDesignProjects = projects.filter(project => project.category === 'product-design');
+
+  const renderProjects = (projects: Project[]) => (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+      {projects.map((project) => (
+        <div key={project.id} className="h-[400px]">
+          <div className={`flip-card ${flippedCard === project.id ? 'flipped' : ''}`}>
+            <div className="flip-card-inner">
+              {/* Front of card */}
+              <div className="flip-card-front bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div className="h-48 bg-gradient-to-r from-purple-500 to-pink-400 relative">
+                  <img 
+                    src={`https://source.unsplash.com/random/800x600/?${project.name.split(' ')[0].toLowerCase()}`}
+                    alt={project.name}
+                    className="w-full h-full object-cover mix-blend-overlay"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <h3 className="text-white text-2xl font-bold text-center px-4 drop-shadow-md">
+                      {project.name}
+                    </h3>
+                  </div>
+                </div>
+                
+                <div className="p-6">
+                  <p className="mb-6 text-neutral-gray">{project.description}</p>
+                  
+                  <Button 
+                    onClick={() => toggleCard(project.id)}
+                    className="w-full bg-purple-500 hover:bg-purple-600"
+                  >
+                    View Details
+                  </Button>
+                </div>
+              </div>
+              
+              {/* Back of card */}
+              <div className="flip-card-back bg-white rounded-2xl shadow-lg p-6">
+                <h3 className="text-2xl font-bold mb-4 text-purple-600">{project.name}</h3>
+                
+                <div className="mb-6">
+                  <h4 className="font-bold text-lg mb-2">Key Results:</h4>
+                  <ul className="list-disc pl-5 mb-6">
+                    {project.results.map((result, idx) => (
+                      <li key={idx} className="mb-2">{result}</li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div className="flex flex-wrap gap-3 mt-auto">
+                  <Button 
+                    onClick={() => toggleCard(project.id)}
+                    variant="outline"
+                    className="flex-1 text-purple-700 border-purple-300"
+                  >
+                    Back
+                  </Button>
+                  
+                  {project.hasPrototype && (
+                    <Button 
+                      asChild
+                      className="flex-1 bg-purple-500 hover:bg-purple-600 gap-1"
+                    >
+                      <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
+                        View Prototype <ExternalLink className="w-4 h-4" />
+                      </a>
+                    </Button>
+                  )}
+                  
+                  <Button 
+                    asChild
+                    variant="outline"
+                    className="flex-1 border-purple-300 text-purple-700 hover:bg-pink-50 gap-1"
+                  >
+                    <a href={project.pdfLink} target="_blank" rel="noopener noreferrer">
+                      Download PDF <FileText className="w-4 h-4" />
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+
+  const renderCategorySection = (title: string, projects: Project[], color: string) => (
+    <div className="mb-16">
+      <h3 className={`text-2xl md:text-3xl font-bold mb-6 text-center ${color} pb-2 relative inline-block`}>
+        {title}
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-purple-500 rounded-full"></div>
+      </h3>
+      
+      {renderProjects(projects)}
+      
+      <div className="flex justify-center mt-8">
+        <Button 
+          className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 gap-2"
+        >
+          View All Projects <ChevronRight className="h-4 w-4" />
+        </Button>
+      </div>
+    </div>
+  );
+
   return (
     <section id="projects" className="section-padding bg-light-gray">
       <div className="container mx-auto">
@@ -66,97 +205,8 @@ export default function ProjectsSection() {
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 w-28 bg-purple-500 rounded-full"></div>
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-          {projects.map((project) => (
-            <div key={project.id} className="h-[400px]">
-              <div className={`flip-card ${flippedCard === project.id ? 'flipped' : ''}`}>
-                <div className="flip-card-inner">
-                  {/* Front of card */}
-                  <div className="flip-card-front bg-white rounded-2xl shadow-lg overflow-hidden">
-                    <div className="h-48 bg-gradient-to-r from-purple-500 to-pink-400 relative">
-                      <img 
-                        src={`https://source.unsplash.com/random/800x600/?${project.name.split(' ')[0].toLowerCase()}`}
-                        alt={project.name}
-                        className="w-full h-full object-cover mix-blend-overlay"
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <h3 className="text-white text-2xl font-bold text-center px-4 drop-shadow-md">
-                          {project.name}
-                        </h3>
-                      </div>
-                    </div>
-                    
-                    <div className="p-6">
-                      <p className="mb-6 text-neutral-gray">{project.description}</p>
-                      <div className="flex flex-wrap gap-2 mb-6">
-                        {project.tools.map((tool) => (
-                          <span 
-                            key={tool} 
-                            className="bg-pink-100 text-purple-700 py-1 px-2 rounded-full text-xs"
-                          >
-                            {tool}
-                          </span>
-                        ))}
-                      </div>
-                      
-                      <Button 
-                        onClick={() => toggleCard(project.id)}
-                        className="w-full bg-purple-500 hover:bg-purple-600"
-                      >
-                        View Details
-                      </Button>
-                    </div>
-                  </div>
-                  
-                  {/* Back of card */}
-                  <div className="flip-card-back bg-white rounded-2xl shadow-lg p-6">
-                    <h3 className="text-2xl font-bold mb-4 text-purple-600">{project.name}</h3>
-                    
-                    <div className="mb-6">
-                      <h4 className="font-bold text-lg mb-2">Key Results:</h4>
-                      <ul className="list-disc pl-5 mb-6">
-                        {project.results.map((result, idx) => (
-                          <li key={idx} className="mb-2">{result}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    
-                    <div className="flex flex-wrap gap-3 mt-auto">
-                      <Button 
-                        onClick={() => toggleCard(project.id)}
-                        variant="outline"
-                        className="flex-1"
-                      >
-                        Back
-                      </Button>
-                      
-                      {project.hasPrototype && (
-                        <Button 
-                          asChild
-                          className="flex-1 bg-purple-500 hover:bg-purple-600 gap-1"
-                        >
-                          <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
-                            View Prototype <ExternalLink className="w-4 h-4" />
-                          </a>
-                        </Button>
-                      )}
-                      
-                      <Button 
-                        asChild
-                        variant="outline"
-                        className="flex-1 border-pink-300 text-purple-700 hover:bg-pink-50 gap-1"
-                      >
-                        <a href={project.pdfLink} target="_blank" rel="noopener noreferrer">
-                          Download PDF <FileText className="w-4 h-4" />
-                        </a>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        {renderCategorySection("Product Improvement Projects", productImprovementProjects, "text-pink-400")}
+        {renderCategorySection("Product Design Projects", productDesignProjects, "text-purple-400")}
       </div>
     </section>
   );
