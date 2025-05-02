@@ -70,7 +70,8 @@ export default function HeroSection() {
             </div>
           </h1>
           
-          <p className="text-lg md:text-xl text-neutral-gray mb-8 max-w-lg mt-10 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          {/* Added more margin-top (mt-24 instead of mt-10) to create more space between title and description */}
+          <p className="text-lg md:text-xl text-neutral-gray mb-8 max-w-lg mt-24 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Driving customer-centric solutions with data & agility
           </p>
           
