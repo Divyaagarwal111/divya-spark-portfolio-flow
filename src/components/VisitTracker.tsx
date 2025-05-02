@@ -13,6 +13,13 @@ const VisitTracker = () => {
 
     const trackVisit = async () => {
       try {
+        // Check if user has already visited in this session
+        const hasVisited = sessionStorage.getItem('hasVisited');
+        if (hasVisited) {
+          setIsTracked(true);
+          return;
+        }
+
         // Get timestamp in a user-friendly format
         const timestamp = new Date().toLocaleString();
         
@@ -30,21 +37,27 @@ const VisitTracker = () => {
         }
 
         // Send email notification via edge function
-        const response = await fetch('https://ljcgevwbfyvbbzpdsnri.supabase.co/functions/v1/send-visit-notification', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            timestamp,
-            userAgent: navigator.userAgent,
-          }),
-        });
+        try {
+          const response = await fetch('https://ljcgevwbfyvbbzpdsnri.supabase.co/functions/v1/send-visit-notification', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              timestamp,
+              userAgent: navigator.userAgent,
+            }),
+          });
 
-        if (!response.ok) {
-          console.error('Failed to send notification');
+          if (!response.ok) {
+            console.error('Failed to send notification');
+          }
+        } catch (fetchError) {
+          console.error('Error in visit notification:', fetchError);
         }
 
+        // Mark as tracked and set in session storage to avoid duplicates
+        sessionStorage.setItem('hasVisited', 'true');
         setIsTracked(true);
       } catch (error) {
         console.error('Error in visit tracking:', error);
@@ -52,14 +65,6 @@ const VisitTracker = () => {
     };
 
     trackVisit();
-
-    // We use the session storage to avoid sending multiple notifications
-    // if the user refreshes the page during the same session
-    const hasVisited = sessionStorage.getItem('hasVisited');
-    if (!hasVisited) {
-      trackVisit();
-      sessionStorage.setItem('hasVisited', 'true');
-    }
   }, [isTracked]);
 
   return null; // This is a utility component that doesn't render anything visible
