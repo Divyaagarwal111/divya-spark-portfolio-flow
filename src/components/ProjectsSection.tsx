@@ -68,6 +68,17 @@ export default function ProjectsSection() {
       demoLink: "#",
       pdfLink: "https://ljcgevwbfyvbbzpdsnri.supabase.co/storage/v1/object/sign/portfolio.pdfs/CRED%20Capstone%20Project_Group%202_C17_V2_%20Updated-compressed.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2ViZWI3ZTYyLTFhMDgtNDk0ZS1hOGVkLTYxODk3YTY3YmI2OCJ9.eyJ1cmwiOiJwb3J0Zm9saW8ucGRmcy9DUkVEIENhcHN0b25lIFByb2plY3RfR3JvdXAgMl9DMTdfVjJfIFVwZGF0ZWQtY29tcHJlc3NlZC5wZGYiLCJpYXQiOjE3NDYwMjAxMzcsImV4cCI6MTc3NzU1NjEzN30.lA9HiUuVhOIL4XUuvuRuHHAiPqvtZARPmBCanKAzOsw",
       category: 'product-improvement'
+    },
+    {
+      id: 5,
+      name: "ParkEase - Parking Solution",
+      description: "Designed a user-friendly parking app to help drivers find and pay for parking spaces more efficiently",
+      image: "/project-parkease.jpg",
+      tools: [],
+      demoLink: "https://parkease-motion-story.lovable.app/",
+      pdfLink: "https://ljcgevwbfyvbbzpdsnri.supabase.co/storage/v1/object/sign/portfolio.pdfs/ParkEase.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2ViZWI3ZTYyLTFhMDgtNDk0ZS1hOGVkLTYxODk3YTY3YmI2OCJ9.eyJ1cmwiOiJwb3J0Zm9saW8ucGRmcy9QYXJrRWFzZS5wZGYiLCJpYXQiOjE3NDYxNzMzNjgsImV4cCI6MTc3NzcwOTM2OH0.sEiMNdcIDNtMtD116qjxeAT29BGq0t0fT3BboYdi3Rs",
+      hasPrototype: true,
+      category: 'product-design'
     }
   ];
 
@@ -131,7 +142,7 @@ export default function ProjectsSection() {
                     <Button 
                       onClick={() => toggleCard(project.id)}
                       variant="outline"
-                      className="flex-1 text-purple-700 border-purple-300 hover:bg-purple-100"
+                      className="flex-1 text-purple-700 border-purple-300 hover:bg-purple-100 bg-purple-500 text-white hover:text-purple-700"
                     >
                       Back
                     </Button>
@@ -149,11 +160,10 @@ export default function ProjectsSection() {
                     
                     <Button 
                       asChild
-                      variant="outline"
-                      className="flex-1 border-purple-300 text-purple-700 hover:bg-purple-100 gap-1"
+                      className="flex-1 bg-purple-500 text-white hover:bg-purple-600 gap-1"
                     >
                       <a href={project.pdfLink} target="_blank" rel="noopener noreferrer">
-                        Download PDF <FileText className="w-4 h-4" />
+                        Download {project.category === 'product-design' ? 'Case Study' : 'PDF'} <FileText className="w-4 h-4" />
                       </a>
                     </Button>
                   </div>
