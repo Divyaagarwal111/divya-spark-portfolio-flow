@@ -1,1 +1,5 @@
+
 project_id = "ljcgevwbfyvbbzpdsnri"
+
+[functions.send-visit-notification]
+verify_jwt = false

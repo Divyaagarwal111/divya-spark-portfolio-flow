@@ -7,6 +7,7 @@ import SkillsSection from '@/components/SkillsSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import WhatIDoSection from '@/components/WhatIDoSection';
 import Footer from '@/components/Footer';
+import VisitTracker from '@/components/VisitTracker';
 
 const Index = () => {
   useEffect(() => {
@@ -26,6 +27,7 @@ const Index = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <VisitTracker />
       <Header />
       <main className="flex-grow">
         <HeroSection />
