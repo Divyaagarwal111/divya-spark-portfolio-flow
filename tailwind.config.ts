@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -142,12 +143,28 @@ export default {
             opacity: '0.8'
           }
         },
+        'pulse-slow': {
+          '0%, 100%': {
+            opacity: '0.7'
+          },
+          '50%': {
+            opacity: '0.3'
+          }
+        },
         'spin-slow': {
           '0%': {
             transform: 'rotate(0deg)'
           },
           '100%': {
             transform: 'rotate(360deg)'
+          }
+        },
+        'spin-slow-reverse': {
+          '0%': {
+            transform: 'rotate(0deg)'
+          },
+          '100%': {
+            transform: 'rotate(-360deg)'
           }
         },
         'flip': {
@@ -165,6 +182,14 @@ export default {
           '100%': {
             transform: 'rotateY(0deg)'
           }
+        },
+        'bounce-subtle': {
+          '0%, 100%': {
+            transform: 'translateY(0)'
+          },
+          '50%': {
+            transform: 'translateY(-5px)'
+          }
         }
       },
       animation: {
@@ -174,9 +199,12 @@ export default {
         'scale-in': 'scale-in 0.3s ease-out',
         'float': 'float 6s ease-in-out infinite',
         'pulse-soft': 'pulse-soft 3s ease-in-out infinite',
+        'pulse-slow': 'pulse-slow 5s ease-in-out infinite',
         'spin-slow': 'spin-slow 8s linear infinite',
+        'spin-reverse': 'spin-slow-reverse 10s linear infinite',
         'flip': 'flip 0.5s ease-out forwards',
-        'flip-back': 'flip-back 0.5s ease-out forwards'
+        'flip-back': 'flip-back 0.5s ease-out forwards',
+        'bounce-subtle': 'bounce-subtle 2s ease-in-out infinite'
       },
       fontFamily: {
         'playfair': ['"Playfair Display"', 'serif'],
